@@ -1,0 +1,80 @@
+/* ============================================
+   إضافة هذا الكود في نهاية ملف style.css
+   ============================================ */
+
+/* Templates Grid - 4 cards per row with full images */
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.template-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--dark);
+    display: block;
+}
+
+.template-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.template-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+}
+
+.template-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.template-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--dark);
+}
+
+.template-category {
+    display: none;
+}
+
+/* Responsive - 4 cards on desktop, 3 on tablet, 2 on mobile, 1 on small */
+@media (max-width: 1200px) {
+    .templates-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .templates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .templates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .template-info {
+        padding: 0.75rem;
+    }
+
+    .template-title {
+        font-size: 0.9rem;
+    }
+}

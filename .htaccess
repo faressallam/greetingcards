@@ -1,0 +1,9 @@
+# Stop WordPress from handling this directory
+RewriteEngine On
+RewriteBase /1/
+
+# Disable WordPress rewrite rules for this folder
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /1/index.php [L]
